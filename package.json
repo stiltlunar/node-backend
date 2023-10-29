@@ -1,0 +1,22 @@
+{
+  "name": "node-backend",
+  "version": "1.0.0",
+  "description": "a basic node backend for testing and learning more backend tech",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stiltlunar/node-backend.git"
+  },
+  "author": "Stilt Lunar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stiltlunar/node-backend/issues"
+  },
+  "homepage": "https://github.com/stiltlunar/node-backend#readme",
+  "dependencies": {
+    "node": "^21.1.0"
+  }
+}
