@@ -1,8 +1,16 @@
 const db = require('./db/db.js')
 
-async function query() {
-  const data = await db.any('SELECT * FROM bible_versions').catch((error) => {console.log('ERROR: ' + error)})
-  console.log(data)
+function query(callback) {
+  db.any("SELECT * FROM bible_text WHERE bible_version = 'NA28'")
+  .then((data) =>{callback(data)})
+  .catch((error) => {console.log('ERROR: ' + error)})
 }
 
-query()
+function printlines(data) {
+  data.forEach(line => {
+    console.log(line.bible_text)
+  })
+}
+
+query(printlines)
+
