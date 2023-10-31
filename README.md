@@ -13,6 +13,11 @@ Just learning some backend by creating some stuff. This will form a basic templa
 - Sessions
 - Cookies
 
+### Bible App Ideas
+
+- Export to plain text or PDF
+- Create documents or presentations for teaching
+
 ## Technologies
 
 - DB -> PostgreSQL
