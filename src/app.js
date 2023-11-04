@@ -1,16 +1,25 @@
-const db = require('./db/db.js')
+const Express = require('express');
+const app = new Express();
+const path = require('path');
 
-function query(callback) {
-  db.any("SELECT * FROM bible_text WHERE bible_version = 'NA28'")
-  .then((data) =>{callback(data)})
-  .catch((error) => {console.log('ERROR: ' + error)})
+const db = require('./db/db.js');
+
+async function getBibleText() {
+  return db.any("SELECT * FROM bible_text WHERE bible_version = 'NA28'");
 }
 
-function printlines(data) {
-  data.forEach(line => {
-    console.log(line.bible_text)
-  })
-}
+const PORT = 3000;
 
-query(printlines)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '/dist/index.html'));
+})
 
+app.get('/bible_text_3john', async (req, res) => {
+  console.log('request received')
+  const bibleStuff = await getBibleText();
+  res.json({text: bibleStuff});
+})
+
+app.listen(PORT, () => {
+  console.log('Listening on port: ' + PORT);
+})

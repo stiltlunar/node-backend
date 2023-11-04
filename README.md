@@ -4,14 +4,14 @@ Just learning some backend by creating some stuff. This will form a basic templa
 
 ## Features
 
-- Authentication
-- Database
-- CRUD API
-- Environment Variables
-- Serving Pages
-- Ecryption
-- Sessions
-- Cookies
+- [] Authentication
+- [x] Database
+- [] CRUD API
+- [] Environment Variables
+- [] Serving Pages
+- [] Ecryption
+- [] Sessions
+- [] Cookies
 
 ### Bible App Ideas
 
@@ -22,3 +22,6 @@ Just learning some backend by creating some stuff. This will form a basic templa
 
 - DB -> PostgreSQL
 - Server -> NodeJS/ExpressJS
+- DB Interface -> pg-promise
+- Authentication -> PassportJS
+- Encryption -> Bcrypt?

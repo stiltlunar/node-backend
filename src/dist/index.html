@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Hello World</h1>
+  <button id="get-text">Get 3 John Text in Greek</button>
+  <div id="bible-text"></div>
+
+<script>
+  const getButton = document.getElementById('get-text');
+  const textArea = document.getElementById('bible-text');
+
+  getButton.addEventListener("click", async () => {
+    const response = await fetch('http://192.168.1.35:3000/bible_text_3john');
+    const json = await response.json();
+    const html = []
+    json.text.forEach(verse => {
+      html.push(`<p><sup>${verse.verse}</sup> ${verse.bible_text}</p>`)
+    })
+    textArea.innerHTML = html.join(' ')
+  })
+
+</script>
+</body>
+</html>
